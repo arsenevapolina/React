@@ -1,8 +1,8 @@
 import React from "react";
-import "./MovieTitle.css"; 
+import styles from "./MovieTitle.module.css"; 
 
 const Title = ({ text }) => {
-  return <h3 className="movie-title">{text}</h3>;
+  return <h3 className={`${styles['movie-title']}`}>{text}</h3>;
 };
 
 export default Title;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.css";
+import styles from "./App.module.css";
 import Button from "./components/Button/Button";
 import Paragraph from "./components/Paragraph/Paragraph";
 import Title from "./components/Title/Title";
@@ -40,7 +40,7 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <div className={styles.app}>
       <Header>
         <Navbar>
           <Link>Поиск фильмов</Link>
@@ -63,11 +63,7 @@ function App() {
           onKeyDown={handleKeyPress}
           onButtonClick={() => console.log("Кнопка поиска нажата")}
         />
-        <Button
-          onClick={handleButtonClick}
-          text="Искать"
-          className="button accent"
-        >
+        <Button onClick={handleButtonClick} text="Искать">
           Искать
         </Button>
       </Form>

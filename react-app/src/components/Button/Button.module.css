@@ -21,18 +21,3 @@
     border-color: #7366e6;
 }
 
-.image-button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-
-.image-button:focus {
-    outline: none;
-}
-
-.bottom-image {
-    width: 100%;
-    height: auto;
-}

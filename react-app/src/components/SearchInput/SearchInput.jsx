@@ -1,4 +1,4 @@
-import "./SearchInput.css";
+import styles from "./SearchInput.module.css";
 
 function SearchInput({
   img,
@@ -9,10 +9,10 @@ function SearchInput({
   onButtonClick,
 }) {
   return (
-    <form className="form-wrapper" onSubmit={(e) => e.preventDefault()}>
+    <form className={`${styles['form-wrapper']}`} onSubmit={(e) => e.preventDefault()}>
       {img && (
-        <button type="button" className="input-button" onClick={onButtonClick}>
-          <img src={img} alt="Картинка поиска" className="input-img" />
+        <button type="button" className={`${styles['input-button']}`} onClick={onButtonClick}>
+          <img src={img} alt="Картинка поиска" className={`${styles['input-img']}`} />
         </button>
       )}
       <input
@@ -21,7 +21,7 @@ function SearchInput({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className="input"
+        className={styles.input}
         onKeyDown={onKeyDown}
       />
     </form>

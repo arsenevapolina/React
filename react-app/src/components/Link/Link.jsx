@@ -1,10 +1,10 @@
-import "./Link.css";
+import styles from "./Link.module.css";
 import Counter from "../Counter/Counter";
 
 function Link({ children, img, count, onCounterClick }) {
   return (
-    <div className="link-container">
-      <a className="link" href="#">
+    <div className={`${styles['link-container']}`}>
+      <a className={styles.link} href="#">
         {children}
       </a>
       {count !== undefined && (
@@ -12,10 +12,10 @@ function Link({ children, img, count, onCounterClick }) {
       )}
       {img && (
         <button
-          className="image-button"
+          className={`${styles['image-button']}`}
           onClick={() => console.log("Кнопка была нажата")}
         >
-          <img src={img} alt="Изображение" className="link-image" />
+          <img src={img} alt="Изображение" />
         </button>
       )}
     </div>
