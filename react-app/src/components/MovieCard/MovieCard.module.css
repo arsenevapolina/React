@@ -30,3 +30,19 @@
     align-self: baseline;
 }
 
+.image-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.image-button:focus {
+    outline: none;
+}
+
+.bottom-image {
+    width: 100%;
+    height: auto;
+}
+

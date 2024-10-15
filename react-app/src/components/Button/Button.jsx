@@ -1,11 +1,15 @@
-import "./Button.css";
+import styles from "./Button.module.css";
+import React, { forwardRef } from "react";
 
-function Button({ onClick, children, className }) {
+const Button = forwardRef(({ onClick, children, className, img }, ref) => {
+  const buttonClass = `${styles.button} ${className || ""}`.trim();
+
   return (
-    <button onClick={onClick} className={className}>
+    <button ref={ref} onClick={onClick} className={buttonClass}>
+      {img && <img src={img} alt="Кнопка" className={styles.buttonImage} />}
       {children}
     </button>
   );
-}
+});
 
 export default Button;

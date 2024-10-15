@@ -1,7 +1,7 @@
-import "./SectionTitle.css";
+import styles from "./SectionTitle.module.css";
 
 function SectionTitle({ children }) {
-  return <div className="heading-wrapper">{children}</div>;
+  return <div className={`${styles['heading-wrapper']}`}>{children}</div>;
 }
 
 export default SectionTitle;

@@ -1,22 +1,15 @@
-import "./Link.css";
+import styles from "./Link.module.css";
 import Counter from "../Counter/Counter";
 
-function Link({ children, img, count, onCounterClick }) {
+function Link({ children, count, onCounterClick, img }) {
   return (
-    <div className="link-container">
-      <a className="link" href="#">
+    <div className={styles["link-container"]}>
+      <a className={`${styles["link-container"]} ${styles.link}`} href="#">
         {children}
+        {img && <img src={img} alt="Аватар" />}
       </a>
       {count !== undefined && (
         <Counter count={count} onClick={onCounterClick} />
-      )}
-      {img && (
-        <button
-          className="image-button"
-          onClick={() => console.log("Кнопка была нажата")}
-        >
-          <img src={img} alt="Изображение" className="link-image" />
-        </button>
       )}
     </div>
   );

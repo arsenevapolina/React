@@ -1,0 +1,7 @@
+.form-wrapper {
+   margin-top: 100px;
+   display: flex;
+   flex-direction: column;
+   gap: 27px;
+   max-width: 284px;
+}

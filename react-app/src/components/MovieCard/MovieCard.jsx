@@ -1,9 +1,9 @@
 import React from "react";
-import "./MovieCard.css";
+import styles from "./MovieCard.module.css";
 import "../Button/Button";
 import Button from "../Button/Button";
 import Rating from "../Rating/Rating";
-import Poster from "../Poster/Poster"; // Импортируем новый компонент
+import Poster from "../Poster/Poster"; 
 import MovieTitle from "../MovieTitle/MovieTitle";
 
 const MovieCard = ({
@@ -15,24 +15,29 @@ const MovieCard = ({
   bottomText,
 }) => {
   return (
-    <div className="movie-card">
-      <div className="poster-wrapper">
-        <Poster src={poster} alt={`${title} poster`} className="movie-poster" />
+    <div className={`${styles["movie-card"]}`}>
+      <div className={`${styles["poster-wrapper"]}`}>
+        <Poster
+          src={poster}
+          alt={`${title} poster`}
+          className={styles.movie - poster}
+        />
         <Rating image={topImage} text={topText} />
       </div>
       <MovieTitle text={title} />
-      <div className="bottom-content">
+      <div className={`${styles["bottom-content"]}`}>
         <Button
-          className="image-button"
+          variant="image"
+          className={styles["image-button"]}
           onClick={() => console.log("Добавлено в избранное")}
         >
           <img
             src={bottomImage}
             alt="Кнопка добавить"
-            className="bottom-image"
+            className={styles["bottom-image"]}
           />
         </Button>
-        <p className="bottom-text">{bottomText}</p>
+        <p className={`${styles["bottom-text"]}`}>{bottomText}</p>
       </div>
     </div>
   );
