@@ -1,5 +1,8 @@
 export interface MovieDetailsProps {
-  short?: {
-    name?: string;
-  };
+    name: string;
+    image: string;
+    description: string;
+    review: string;
+    genre: string;
+    aggregateRating: number;
 }

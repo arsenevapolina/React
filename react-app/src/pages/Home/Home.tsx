@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, KeyboardEvent, useEffect } from "react";
+import { useState, ChangeEvent, KeyboardEvent } from "react";
 import Button from "../../components/Button/Button";
 import button from "../../components/Button/Button.module.css";
 import Paragraph from "../../components/Paragraph/Paragraph";
@@ -6,8 +6,7 @@ import Title from "../../components/Title/Title";
 import SearchInput from "../../components/SearchInput/SearchInput";
 import Form from "../../layouts/Form/Form";
 import SectionTitle from "../../layouts/SectionTitle/SectionTitle";
-import MovieList from "../../components/MovieList/MovieList";
-import { useLocation, useNavigate } from "react-router-dom";
+import MovieList from "../../components/MovieList/MovieList"; 
 import { PREFIX } from "../../helpers/API";
 import { IFilm } from "../../interfaces/movie.interface";
 import axios, { AxiosError } from "axios";
@@ -16,18 +15,11 @@ const text =
   "Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.";
 
 export function Home() {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    console.log(location);
-  }, [location]);
-
   const [inputValue, setInputValue] = useState<string>("");
-  const [movies, setMovies] = useState<IFilm[]>([]); 
+  const [movies, setMovies] = useState<IFilm[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | undefined>();
-  const [noResults, setNoResults] = useState<boolean>(false); 
+  const [noResults, setNoResults] = useState<boolean>(false);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -39,13 +31,13 @@ export function Home() {
       setIsLoading(true);
       setNoResults(false);
       try {
-        const moviesData = await fetchMovies(inputValue); 
+        const moviesData = await fetchMovies(inputValue);
         console.log(moviesData);
         setMovies(moviesData);
 
         if (moviesData.length === 0) {
-          setNoResults(true); 
-        }
+          setNoResults(true);
+        } 
 
         setInputValue("");
       } catch (e) {
@@ -53,7 +45,6 @@ export function Home() {
         if (e instanceof AxiosError) {
           setError(e.message);
         }
-        setIsLoading(false);
       } finally {
         setIsLoading(false);
         console.log("Запрос завершен");
@@ -74,7 +65,7 @@ export function Home() {
       const data = response.data as IFilm[];
       console.log("Данные из API:", data);
 
-      return data.description || [];
+      return data.description || []; 
     } catch (error) {
       console.error("Ошибка при получении данных:", error);
       return [];
@@ -112,3 +103,4 @@ export function Home() {
     </>
   );
 }
+
