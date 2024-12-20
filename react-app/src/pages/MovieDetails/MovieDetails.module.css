@@ -1,14 +1,13 @@
 .wrapper {
-    margin-top: 51px;
     background: #20283ECC;
     backdrop-filter: blur(24px);
     padding: 40px;
-    max-width: 1050px;
-    margin: auto;
     border-radius: 24px;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    margin-top: 51px;
+    margin-bottom: 80px;
 }
 
 .p {
@@ -23,4 +22,134 @@
     font-size: 32px;
     font-weight: 600;
     line-height: 40px;
+}
+
+.movie-details {
+    max-width: 1050px;
+    margin: auto;
+}
+
+.text {
+    color: #8E95A9;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.favorite {
+    color: #37D8A7;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+.notFavorite {
+    color: #7B6EF6;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+.button {
+    display: flex;
+    gap: 8px;
+    margin: 0px 0px 0px 8px;
+    text-align: center;
+    align-items: center;
+}
+
+.add-image {
+    width: 24px;
+    height: 24px;
+}
+
+.rating {
+    display: flex;
+    background: #000000A6;
+    backdrop-filter: blur(8px);
+    padding: 8px;
+    border-radius: 8px;
+    gap: 4px;
+    align-items: center;
+    max-width: 59px;
+}
+
+.title {
+    color: #767E94;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.info {
+    color: #C3C8D4;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.review {
+    color: #C3C8D4;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 480px;
+}
+
+.content {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.review-wrapper {
+    background: #20283ECC;
+    backdrop-filter: blur(24px);
+    padding: 40px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title-review {
+    color: #767E94;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 14px;
+}
+
+.zero {
+    display: flex;
+    justify-content: baseline;
 }

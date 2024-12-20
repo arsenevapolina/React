@@ -1,5 +1,5 @@
 import styles from "./Button.module.css";
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import { ButtonProps } from "./Button.props"; 
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -16,3 +16,4 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 export default Button;
+

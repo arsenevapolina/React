@@ -19,3 +19,11 @@
     color: #FFFFFF;
 }
 
+.link-inactive {
+    color: gray;
+    /* или любой другой цвет, который вам подходит */
+    text-decoration: none;
+    /* убрать подчеркивание, если нужно */
+    pointer-events: none;
+    /* предотвратить любые клики */
+}

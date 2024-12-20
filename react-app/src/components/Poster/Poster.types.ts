@@ -1,4 +1,5 @@
 export interface PosterProps {
-  src: string; 
-  alt: string; 
+  src: string;
+  alt: string;
+  size: "large" | "small";
 }

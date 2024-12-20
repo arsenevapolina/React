@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import styles from "./SearchInput.module.css";
 import { SearchInputProps } from "./SearchInput.types"; 
 

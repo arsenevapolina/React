@@ -1,19 +1,18 @@
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { UserProvider } from "./components/context/UserContext";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layout } from "./layout/Menu/Layout";
 import { AuthLayout } from "./layout/Menu/Auth/AuthLayout";
 import { Home } from "./pages/Home/Home";
 import { Login } from "./pages/Login/Login";
 import { MovieDetails } from "./pages/MovieDetails/MovieDetails";
-import { Favorites } from "./pages/Favorites/Favorites";
+import FavoriteMovies from "./pages/Favorites/Favorites";
 import { NotFound } from "./pages/NotFound/NotFound";
-import { Profile } from "./pages/Profile/Profile";
 import { DETAILS } from "./helpers/API";
 import axios from "axios";
 import { RequireAuth } from "./helpers/RequireAuth";
-
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/favorites",
-        element: <Favorites />,
+        element: <FavoriteMovies />,
       },
       {
         path: "/movie/:id",
@@ -54,10 +53,6 @@ const router = createBrowserRouter([
             throw new Error("Не удалось загрузить данные о фильме");
           }
         },
-      },
-      {
-        path: "/profile",
-        element: <Profile />,
       },
     ],
   },
@@ -81,9 +76,9 @@ const rootElement = document.getElementById("root");
 
 if (rootElement) {
   ReactDOM.createRoot(rootElement).render(
-    <UserProvider>
+    <Provider store={store}>
       <RouterProvider router={router} />
-    </UserProvider>
+    </Provider>
   );
 } else {
   console.error(`Element with id "root" not found`);
